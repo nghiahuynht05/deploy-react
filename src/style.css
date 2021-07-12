@@ -29,6 +29,8 @@ a:-webkit-any-link {
   height: 100%;
   position: relative;
   touch-action: none;
+  transform: translate3d(0px, 0px, 0px);
+  transition: all 700ms ease 0s;
 }
 .container {
   width: 80%;
@@ -199,6 +201,10 @@ a:-webkit-any-link {
 @media only screen and (min-width: 1440px) {
   #design-with {
     left: 43%;
+  }
+
+  .header .menu {
+    font-size: 15px;
   }
 }
 
@@ -882,6 +888,7 @@ footer {
   font-weight: bolder;
   text-transform: uppercase;
   text-align: center;
+  padding-top: 10%;
 }
 
 .brand-notes {

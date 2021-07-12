@@ -1,32 +1,42 @@
 import { Component } from "react";
 
-import logo from '../image/logo.png';
 
 class Brand extends Component {
 
     render() {
         return (
             <div>
-                <div className="container">
-                    <div className="content">
-                        <section className="section" id="band">
-                            <div className="navbar">
-                                <div className="header">
-                                    <div className="logo">
-                                        <a href="/"><img src={logo} alt="" /></a>
-                                    </div>
-                                    <ul className="menu">
-                                        {/* <li><span href="" >TEAM</span></li>
-                                        <li><span href="" >BRAND</span></li>
-                                        <li><span href="" >LOGO</span></li>
-                                        <li><span href="" >ABOUT US</span></li>
-                                        <li><span href="" >CONTACT</span></li> */}
-                                    </ul>
-                                </div>
-                            </div>
+                <div className="header" style={{ 'z-index': '99999', 'width': '100%', 'position': 'fixed', 'display': 'grid', 'grid-template-columns': '50% 50%' }}>
+                    <div style={{ 'display': 'grid', 'grid-template-columns': '20% 80%' }}>
+                        <a href="/"><img src='./logo.png' alt="" style={{ 'height': '100%', 'width': '100%' }} /></a>
+                    </div>
+                    <div style={{ 'display': 'grid', 'grid-template-columns': '80% 20%' }}>
+                        <ul className="menu" style={{ 'top': '20px', 'z-index': '70', 'padding-inline-start': '0px' }}>
+                            <li data-menuanchor="page-home" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
+                                <a href="#page-home">TEAM</a>
+                            </li>
+                            <li data-menuanchor="page-brand" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
+                                <a href="#page-brand">BRAND</a>
+                            </li>
+                            <li data-menuanchor="page-logo" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
+                                <a href="#page-logo">LOGO</a>
+                            </li>
+                            <li data-menuanchor="page-about" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
+                                <a href="#page-about">ABOUT US</a>
+                            </li>
+                            <li data-menuanchor="page-contact" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
+                                <a href="#page-contact">CONTACT</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <section className="section" id="band">
+                    <div className="container">
+                        <div className="content">
                             <div className="brand-component">
                                 <div className="layout" style={{ display: 'block' }}>
-                                    <div className="brand">
+                                    <div className="brand" style={{ 'position': 'relative' }}>
                                         <div className="brand-name">Brand</div>
                                         <div className="brand-notes">Những hình ảnh biết nói, biết an ủi bạn lúc các bạn cần điều gì đó để nhìn lại,
                                             tịnh tâm và đi tiếp...</div>
@@ -59,9 +69,9 @@ class Brand extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                        </div>
                     </div>
-                </div>
+                </section>
             </div>
         )
     }

@@ -13,19 +13,19 @@ class Brand extends Component {
                     <div style={{ 'display': 'grid', 'grid-template-columns': '80% 20%' }}>
                         <ul className="menu" style={{ 'top': '20px', 'z-index': '70', 'padding-inline-start': '0px' }}>
                             <li data-menuanchor="page-home" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
-                                <a href="#page-home">TEAM</a>
+                                <a href="./#page-home">TEAM</a>
                             </li>
                             <li data-menuanchor="page-brand" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
-                                <a href="#page-brand">BRAND</a>
+                                <a href="./#page-brand">BRAND</a>
                             </li>
                             <li data-menuanchor="page-logo" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
-                                <a href="#page-logo">LOGO</a>
+                                <a href="./#page-logo">LOGO</a>
                             </li>
                             <li data-menuanchor="page-about" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
-                                <a href="#page-about">ABOUT US</a>
+                                <a href="./#page-about">ABOUT US</a>
                             </li>
                             <li data-menuanchor="page-contact" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
-                                <a href="#page-contact">CONTACT</a>
+                                <a href="./#page-contact">CONTACT</a>
                             </li>
                         </ul>
                     </div>

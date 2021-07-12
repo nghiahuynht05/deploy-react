@@ -363,8 +363,8 @@ class Home extends Component {
                                 <section className="section" id="page-5" data-anchor="page-contact">
                                     <div className="container">
                                         <div className="content">
-                                            <div className="contact">
-                                                <div className="layout-enhance">
+                                            <div className="contact"style={{ 'height': '70%' }}>
+                                                <div className="layout-enhance" style={{ 'grid-template-rows': '100%', 'height': '100%' }}>
                                                     <div className="info">
                                                         <div className="us">Cùng chúng tôi chạm tới những cảm xúc!!!</div>
                                                         <form action=''>

@@ -1,21 +1,20 @@
 @font-face {
-  font-family: 'Gotham-Medium';
-  src: url('../src/font/Gotham-Medium.otf');
+  font-family: "Gotham-Medium";
+  src: url("../src/font/Gotham-Medium.otf");
 }
 
 @font-face {
-  font-family: 'Gotham-Thin';
-  src: url('../src/font/Gotham-Thin.otf');
-
+  font-family: "Gotham-Thin";
+  src: url("../src/font/Gotham-Thin.otf");
 }
 
 @font-face {
-  font-family: 'Gotham-Ultra';
-  src: url('../src/font/Gotham-Ultra.otf');
+  font-family: "Gotham-Ultra";
+  src: url("../src/font/Gotham-Ultra.otf");
 }
 
 body {
-  font-family: 'Gotham-Medium', 'Gotham-Thin', 'Gotham-Ultra', sans-serif;
+  font-family: "Gotham-Medium", "Gotham-Thin", "Gotham-Ultra", sans-serif;
   background-color: #ecf0f3;
   color: rgba(22, 22, 22, 0.78);
   font-size: 12px;
@@ -24,12 +23,11 @@ body {
 a:-webkit-any-link {
   color: rgba(22, 22, 22, 0.78);
   text-decoration: unset;
-
 }
 
 .container {
-  width: 70%;
-  margin: 50px auto;
+  width: 80%;
+  margin: auto;
   height: 100%;
 }
 
@@ -39,13 +37,9 @@ a:-webkit-any-link {
   height: 100px;
   background-color: #ecf0f3;
   margin: auto;
-  z-index: 999999;
 }
 
 .header {
-  height: 100px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   margin: 0 auto;
 }
 
@@ -64,6 +58,7 @@ a:-webkit-any-link {
 .header .menu {
   display: inline-block;
   margin: auto;
+  font-size: 14px
 }
 
 .header .menu li {
@@ -108,24 +103,27 @@ a:-webkit-any-link {
 .band .banner-band {
   width: auto;
   height: auto;
-  margin: auto;
+  padding-top: 05%;
 }
 
 .band .magic {
-  font-size: 90px;
+  font-size: 140px;
   font-weight: bolder;
   text-transform: uppercase;
   height: 100%;
   display: inline-block;
+  text-align: center;
 }
 
 .band .design {
-  font-family: 'Gotham-Thin', sans-serif;
-  font-size: 70px;
+  font-family: "Gotham-Thin", sans-serif;
+  font-size: 140px;
   font-weight: normal;
   text-transform: uppercase;
-  height: 100%;
   display: inline-block;
+  position: absolute;
+  left: 40%;
+  padding-top: 05%;
 }
 
 .band .brand {
@@ -140,12 +138,12 @@ a:-webkit-any-link {
 .band .banner {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 100%;
+  padding-top: 05%;
 }
 
 .band .banner-info {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
+  display: grid;
 }
 
 .banner-info .char {
@@ -159,9 +157,44 @@ a:-webkit-any-link {
 }
 
 .banner-info .view-data {
-  padding: 70px 0px;
-  font-family: 'Gotham-Thin', sans-serif;
+  margin: auto 0;
+  font-family: "Gotham-Thin", sans-serif;
   font-size: 15px;
+  padding-left: 10%;
+}
+
+@media only screen and (min-width: 600px) {
+  #design-with {
+    left: 55%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #design-with {
+    left: 50%;
+  }
+  .band .design {
+    font-size: 120px;
+  }
+  .band .magic {
+    font-size: 120px;
+  }
+
+  .header .menu {    
+    font-size: 12px
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  #design-with {
+    left: 43%;
+  }
+}
+
+@media only screen and (min-width: 1441px) {
+  #design-with {
+    left: 40%;
+  }
 }
 
 .band .banner-logo {
@@ -177,7 +210,7 @@ a:-webkit-any-link {
   width: 130%;
   position: relative;
   background-size: cover;
-  background-image: url('../src/image/sun.png');
+  background-image: url("../src/image/sun.png");
   background-position: center;
   background-repeat: no-repeat;
   grid-area: 1 / 2 / span 2 / span 4;
@@ -186,7 +219,7 @@ a:-webkit-any-link {
 .band-sun .sun {
   position: inherit;
   height: 100%;
-  background-image: url('../src/image/loading.png');
+  background-image: url("../src/image/loading.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -215,7 +248,7 @@ a:-webkit-any-link {
 }
 
 .brand-content {
-  font-family: 'Gotham-Thin', sans-serif;
+  font-family: "Gotham-Thin", sans-serif;
   font-size: 10px;
   margin: auto;
 }
@@ -275,7 +308,7 @@ a:-webkit-any-link {
 }
 
 .brand .slider-show .thumbnail .image-01 {
-  background-image: url('../src/image/thumb-1.jpg');
+  background-image: url("../src/image/thumb-1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -284,7 +317,7 @@ a:-webkit-any-link {
 }
 
 .brand .slider-show .thumbnail .image-02 {
-  background-image: url('../src/image/thumb-2.jpg');
+  background-image: url("../src/image/thumb-2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -293,7 +326,7 @@ a:-webkit-any-link {
 }
 
 .brand .slider-show .thumbnail .image-03 {
-  background-image: url('../src/image/thumb-3.jpg');
+  background-image: url("../src/image/thumb-3.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -453,7 +486,7 @@ a:-webkit-any-link {
 .aboutus .about-image .image {
   width: 80%;
   height: 95%;
-  background-image: url('../src/image/about-image.jpg');
+  background-image: url("../src/image/about-image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% center;
@@ -493,7 +526,7 @@ a:-webkit-any-link {
 }
 
 .contact .info {
-  font-family: 'Gotham-Thin', sans-serif;
+  font-family: "Gotham-Thin", sans-serif;
   width: 100%;
   height: 100%;
   float: left;
@@ -513,7 +546,7 @@ a:-webkit-any-link {
 .contact .contact-image .image {
   width: 80%;
   height: 90%;
-  background-image: url('../src/image/contact.jpg');
+  background-image: url("../src/image/contact.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% center;
@@ -572,7 +605,6 @@ input[type="submit"]:hover {
 .contact .detail {
   padding: 20px 0px;
 }
-
 
 .botton-type {
   all: unset;
@@ -645,7 +677,7 @@ input[type="submit"]:hover {
   .band-sun {
     height: 300px;
     width: 100%;
-    background-image: url('../src/image/sun.png');
+    background-image: url("../src/image/sun.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -704,7 +736,7 @@ input[type="submit"]:hover {
 .footer {
   height: 100%;
   width: 100%;
-  font-family: 'Gotham-Thin', sans-serif;
+  font-family: "Gotham-Thin", sans-serif;
 }
 
 footer {
@@ -715,7 +747,6 @@ footer {
 
 footer .footer-image .logo img {
   height: 80px;
-
 }
 
 .footer-info {
@@ -729,7 +760,7 @@ footer .footer-image .logo img {
   height: auto;
   font-weight: bolder;
   font-size: 30px;
-  font-family: 'Gotham-Medium', sans-serif;
+  font-family: "Gotham-Medium", sans-serif;
 }
 
 .footer-info-address {
@@ -788,7 +819,7 @@ footer li:last-child {
   grid-row: 1 / 2;
 }
 
-footer li:hover~li p {
+footer li:hover ~ li p {
   animation: wave-animation 0.3s infinite;
 }
 
@@ -803,7 +834,6 @@ footer {
 }
 
 @keyframes wave-animation {
-
   0%,
   100% {
     transform: rotate(0deg);
@@ -818,8 +848,8 @@ footer {
   }
 }
 
-#contect-layout .fp-tableCell {
-  vertical-align: unset
+#page5 .fp-tableCell {
+  vertical-align: unset;
 }
 
 .brand-component {
@@ -893,7 +923,6 @@ footer {
   padding: 3% 0px;
   cursor: pointer;
   transition: 0.3s;
-
 }
 
 .logo-item img {
@@ -905,7 +934,6 @@ footer {
   box-shadow: 3px 3px 5px 0px #666;
   border: 2px solid black;
 }
-
 
 .logo-item:hover {
   opacity: 0.7;
@@ -966,21 +994,21 @@ footer {
 
 @-webkit-keyframes zoom {
   from {
-    -webkit-transform: scale(0)
+    -webkit-transform: scale(0);
   }
 
   to {
-    -webkit-transform: scale(1)
+    -webkit-transform: scale(1);
   }
 }
 
 @keyframes zoom {
   from {
-    transform: scale(0)
+    transform: scale(0);
   }
 
   to {
-    transform: scale(1)
+    transform: scale(1);
   }
 }
 

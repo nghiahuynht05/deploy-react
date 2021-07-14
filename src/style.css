@@ -79,6 +79,16 @@ a:-webkit-any-link {
   color: inherit;
 }
 
+.logo-menu {
+  background-image: url("./image/logo.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 56px;
+  width: 124px;
+  margin: auto;
+}
+
 .footer {
   grid-area: f;
 }
@@ -103,7 +113,7 @@ a:-webkit-any-link {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: auto;
-  height: inherit;
+  height: auto;
   justify-items: center;
 }
 
@@ -134,18 +144,18 @@ a:-webkit-any-link {
   font-weight: normal;
   text-transform: uppercase;
   display: inline-block;
-  position: absolute;
   left: 40%;
-  /* padding-top: 05%; */
 }
 
 .band .brand {
   font-size: 60px;
   font-weight: 100;
   text-transform: uppercase;
-  height: 100%;
-  margin: auto;
-  padding-right: 25%;
+  /* height: 100%; */
+  padding-left: 25%;
+  width: max-content;
+  position: absolute;
+  top: 33%;
 }
 
 .band .banner {
@@ -155,25 +165,23 @@ a:-webkit-any-link {
   padding-top: 05%;
 }
 
-.band .banner-info {
-  display: grid;
-}
-
 .banner-info .char {
   background-image: url("../src/image/char.png");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: right;
   height: 200px;
   width: 400px;
-  margin: auto;
+  padding-left: 34%;
+  margin-top: 35px;
 }
 
 .banner-info .view-data {
-  margin: auto 0;
   font-family: "Gotham-Thin", sans-serif;
-  font-size: 15px;
-  padding-left: 10%;
+  font-size: 13px;
+  width: 425px;
+  padding-left: 36%;
+  margin-top: 25px;
 }
 
 @media only screen and (min-width: 600px) {
@@ -187,10 +195,10 @@ a:-webkit-any-link {
     left: 50%;
   }
   .band .design {
-    font-size: 120px;
+    font-size: 150px;
   }
   .band .magic {
-    font-size: 120px;
+    font-size: 150px;
   }
 
   .header .menu {
@@ -243,35 +251,42 @@ a:-webkit-any-link {
   overflow: hidden;
 }
 
-.brand {
-  height: 100%;
-  width: auto;
-  top: 10%;
-  position: absolute;
-}
 
 .brand .info {
   float: left;
-  margin: 20% auto;
+  margin: 4% auto;
   text-align: center;
 }
 
 .info .detail .image {
-  width: 100%;
-  height: auto;
-  font-size: 70px;
-  padding: 50px 0px;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-align: center;
+  font-size: 140px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25%;
+  padding-bottom: 3%;
 }
 
 .brand-content {
   font-family: "Gotham-Thin", sans-serif;
-  font-size: 15px;
+  font-size: 13px;
+  width: 425px;
+  text-align: left;
   margin: auto;
-  padding-left: 10%;
-  text-align: justify;
+}
+
+.more-button {
+  background-image: url("./image/mor-copy.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 88px;
+  width: 150px;
+  margin: auto;
+  padding-top: 10%;
 }
 
 .info .detail .more {
@@ -543,17 +558,13 @@ a:-webkit-any-link {
 }
 
 .contact {
-  width: auto;
-  margin: auto;
-  top: 10%;
-  position: relative;
+  width: 100%;
+  height: 55%;
 }
 
 .contact .info {
   font-family: "Gotham-Thin", sans-serif;
-  width: 100%;
-  height: 100%;
-  float: left;
+  margin: auto;
 }
 
 .contact .us {
@@ -589,7 +600,8 @@ form label {
 }
 
 input[type="text"] {
-  width: 100%;
+  width: 350px;
+  height: 45px;
   padding: 12px 20px;
   margin: 0px 0px 25px 0px;
   display: inline-block;
@@ -600,8 +612,8 @@ input[type="text"] {
 }
 
 input[type="message"] {
-  width: 100%;
-  height: 120px;
+  width: 351px;
+  height: 90px;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;

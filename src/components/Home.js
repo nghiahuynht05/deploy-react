@@ -67,10 +67,12 @@ class Home extends Component {
         return (
             <div>
                 <div className="header" style={{ 'z-index': '99999', 'width': '100%', 'position': 'fixed', 'display': 'grid', 'grid-template-columns': '50% 50%' }}>
-                    <div style={{ 'display': 'grid', 'grid-template-columns': '20% 80%' }}>
-                        <a href="/"><img src='./logo.png' alt="" style={{ 'height': '100%', 'width': '100%' }} /></a>
+                    <div style={{ 'display': 'grid', 'grid-template-columns': '25% 75%', 'grid-template-rows': '100px' }}>
+                        <a href="/" style={{ "margin": "auto" }}>
+                            <div className='logo-menu'></div>
+                        </a>
                     </div>
-                    <div style={{ 'display': 'grid', 'grid-template-columns': '80% 20%' }}>
+                    <div style={{ 'margin': 'auto', 'padding-left': '40%' }}>
                         <ul className="menu" style={{ 'top': '20px', 'z-index': '70', 'padding-inline-start': '0px' }}>
                             <li data-menuanchor="page-home" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
                                 <a href="#page-home">TEAM</a>
@@ -113,14 +115,20 @@ class Home extends Component {
                                             <div className="band">
                                                 <div className="layout" style={{ display: 'block' }}>
                                                     <div className="banner-band">
-                                                        <div style={{ 'display': 'grid', 'grid-template-columns': '1fr 1fr', 'grid-template-rows': 'auto' }}>
+                                                        <div style={{ textAlign: 'center' }}>
+                                                            <div className="magic">Magic</div>
+                                                            <div className="design">Design</div>
+
+                                                        </div>
+                                                        <div className="brand">Brand</div>
+                                                        {/* <div style={{ 'display': 'grid', 'grid-template-columns': '1fr 1fr', 'grid-template-rows': 'auto' }}>
                                                             <div className="magic">
                                                                 <span> Magis</span>
                                                                 <div style={{ 'font-size': '42px', 'position': 'absolute', 'top': '15%', 'text-align': 'center', 'width': '50%', 'padding-top': '08%' }}>Brand</div>
                                                             </div>
                                                             <div className="design" id='design-with'>Design</div>
 
-                                                        </div>
+                                                        </div> */}
                                                     </div>
                                                     <div className="banner">
                                                         <div className="banner-info">
@@ -149,52 +157,46 @@ class Home extends Component {
                                     </div>
                                 </section>
                                 <section className="section" id="page-2" data-anchor="page-brand">
-                                    <div className="container">
-                                        <div className="content">
-                                            <div className="brand">
-                                                <div className="layout-enhance">
-                                                    <div className="info">
-                                                        <div className="detail">
-                                                            <div className="image">BRAND</div>
-                                                            <div className="brand-content">Để thương hiệu có thể truyền tải được giá trị cốt lỗi cũng
-                                                                như
-                                                                chất
-                                                                lượng của sản phẩm/ dịch vụ đến với toàn bộ khách hàng và thị trường bên ngoài,
-                                                                doanh
-                                                                nghiệp
-                                                                cần xây dựng hình ảnh và nhận diện thương hiệu đầy đủ, mạnh mẽ.</div>
-                                                            <div style={{ 'padding-top': '5%' }}>
-                                                                <button className="botton-type">
-                                                                    <Link to="/brand">
-                                                                        <div className="button-text"><span>MORE...</span></div>
-                                                                    </Link>
-                                                                </button>
-                                                            </div>
+                                    <div className="content" style={{ 'display': 'flex', 'flex-wrap': 'nowrap', 'align-content': 'center', 'justify-content': 'center', 'align-items': 'center' }}>
+                                        <div className="brand" style={{ 'width': '100%' }}>
+                                            <div className="layout-enhance">
+                                                <div className="info">
+                                                    <div className="detail">
+                                                        <div className="image">BRAND</div>
+                                                        <div className="brand-content">Để thương hiệu có thể truyền tải được giá trị cốt lỗi cũng
+                                                            như
+                                                            chất
+                                                            lượng của sản phẩm/ dịch vụ đến với toàn bộ khách hàng và thị trường bên ngoài,
+                                                            doanh
+                                                            nghiệp
+                                                            cần xây dựng hình ảnh và nhận diện thương hiệu đầy đủ, mạnh mẽ.</div>
+                                                        <a href="/" style={{ "margin": "auto" }}>
+                                                            <div className='more-button'></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div className="slider-show">
+                                                    {/* < SliderComponent /> */}
+                                                    <div className="slideshow-container">
+                                                        <div className="mySlides fade">
+                                                            <img src={slider1} style={{ width: '100%', marginLeft: 'auto', marginRight: 'auto' }} alt='' />
+                                                        </div>
+                                                        <div className="mySlides fade" style={{ display: 'block' }}>
+                                                            <img src={slider2} style={{ width: '100%', marginLeft: 'auto', marginRight: 'auto' }} alt='' />
+                                                        </div>
+                                                        <div className="mySlides fade">
+                                                            <img src={slider3} style={{ width: '100%', marginLeft: 'auto', marginRight: 'auto' }} alt='' />
                                                         </div>
                                                     </div>
-                                                    <div className="slider-show">
-                                                        {/* < SliderComponent /> */}
-                                                        <div className="slideshow-container">
-                                                            <div className="mySlides fade">
-                                                                <img src={slider1} style={{ width: '100%', marginLeft: 'auto', marginRight: 'auto' }} alt='' />
-                                                            </div>
-                                                            <div className="mySlides fade" style={{ display: 'block' }}>
-                                                                <img src={slider2} style={{ width: '100%', marginLeft: 'auto', marginRight: 'auto' }} alt='' />
-                                                            </div>
-                                                            <div className="mySlides fade">
-                                                                <img src={slider3} style={{ width: '100%', marginLeft: 'auto', marginRight: 'auto' }} alt='' />
-                                                            </div>
+                                                    <div className=" thumbnail">
+                                                        <div className="item" id="item1" onClick={() => this.handleClick('item1')}>
+                                                            <div className="image-01" />
                                                         </div>
-                                                        <div className=" thumbnail">
-                                                            <div className="item" id="item1" onClick={() => this.handleClick('item1')}>
-                                                                <div className="image-01" />
-                                                            </div>
-                                                            <div className="item-center" id="item2" onClick={() => this.handleClick('item2')}>
-                                                                <div className="image-02" />
-                                                            </div>
-                                                            <div className="item" id="item3" onClick={() => this.handleClick('item3')}>
-                                                                <div className="image-03" />
-                                                            </div>
+                                                        <div className="item-center" id="item2" onClick={() => this.handleClick('item2')}>
+                                                            <div className="image-02" />
+                                                        </div>
+                                                        <div className="item" id="item3" onClick={() => this.handleClick('item3')}>
+                                                            <div className="image-03" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -361,72 +363,69 @@ class Home extends Component {
                                     </div>
                                 </section>
                                 <section className="section" id="page-5" data-anchor="page-contact">
-                                    <div className="container">
-                                        <div className="content">
-                                            <div className="contact"style={{ 'height': '70%' }}>
-                                                <div className="layout-enhance" style={{ 'grid-template-rows': '100%', 'height': '100%' }}>
-                                                    <div className="info">
-                                                        <div className="us">Cùng chúng tôi chạm tới những cảm xúc!!!</div>
-                                                        <form action=''>
-                                                            <label htmlFor="fname">Your name (Tên của bạn)</label>
-                                                            <input autoComplete="off" type="text" id="fname" name="firstname" placeholder="" />
-                                                            <label htmlFor="lname">Your email (Email của bạn)</label>
-                                                            <input autoComplete="off" type="text" id="lname" name="lastname" placeholder="" />
-                                                            <label htmlFor="lname">Specialization (Chuyên ngành)</label>
-                                                            <input autoComplete="off" type="text" id="lname" name="lastname" placeholder="" />
-                                                            <label htmlFor="lname">Your messgae (Lời nhắn của bạn)</label>
-                                                            <input autoComplete="off" type="message" id="lname" name="lastname" placeholder="" />
-                                                            <div>
-                                                                <button className="botton-type" onclick="navToLink('more-about')" style={customStype}>
-                                                                    <div className="button-text"><span>Send</span></div>
-                                                                </button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <div className="contact-image">
-                                                        <div className="image"></div>
-                                                    </div>
+                                    <div className="content" style={{ 'display': 'flex', 'flex-wrap': 'nowrap', 'align-content': 'center', 'justify-content': 'center', 'align-items': 'center' }}>
 
+                                        <div className="contact" style={{ 'width': '100%', 'height': '55%' }}>
+                                            <div className="layout-enhance">
+                                                <div className="info">
+                                                    <div className="us">Cùng chúng tôi chạm tới những cảm xúc!!!</div>
+                                                    <form action=''>
+                                                        <label htmlFor="fname">Your name (Tên của bạn)</label><br></br>
+                                                        <input autoComplete="off" type="text" id="fname" name="firstname" placeholder="" /><br></br>
+                                                        <label htmlFor="lname">Your email (Email của bạn)</label><br></br>
+                                                        <input autoComplete="off" type="text" id="lname" name="lastname" placeholder="" /><br></br>
+                                                        <label htmlFor="lname">Specialization (Chuyên ngành)</label><br></br>
+                                                        <input autoComplete="off" type="text" id="lname" name="lastname" placeholder="" /><br></br>
+                                                        <label htmlFor="lname">Your messgae (Lời nhắn của bạn)</label><br></br>
+                                                        <input autoComplete="off" type="message" id="lname" name="lastname" placeholder="" /><br></br>
+                                                        <div>
+                                                            <button className="botton-type" onclick="navToLink('more-about')" style={customStype}>
+                                                                <div className="button-text"><span>Send</span></div>
+                                                            </button>
+                                                        </div>
+                                                    </form>
                                                 </div>
+                                                <div className="contact-image">
+                                                    <div className="image"></div>
+                                                </div>
+
+                                                {/* </div> */}
                                             </div>
                                             <footer className="footer">
-                                                <div className="footer-info">
-                                                    <div className="footer-info-name">Contact Info</div>
-                                                    <div className="footer-info-address">
-                                                        <div className="address-info">
-                                                            <div>Email</div>
-                                                            <div>mddesign.tdd@gmail.com@gmail.com</div>
-                                                        </div>
-                                                        <div className="address-info">
-                                                            <div>Phone</div>
-                                                            <div>+84 969 57 64 66</div>
-                                                        </div>
-                                                        <div className="address-info" style={{ 'padding-right': '0px' }}>
-                                                            <div>Adress</div>
-                                                            <div>54 Dương Quang Ham, Danang City</div>
-                                                        </div>
+                                                <div className="header" style={{ 'z-index': '99999', 'width': '100%', 'position': 'fixed', 'display': 'grid', 'grid-template-columns': '50% 50%' }}>
+                                                    <div style={{ 'display': 'grid', 'grid-template-columns': '25% 75%', 'grid-template-rows': '100px' }}>
+                                                        <a href="/" style={{ "margin": "auto" }}>
+                                                            <div style={{
+                                                                'font-size': '30px', 'font-family': 'GOTHAM-MEDIUM', 'font-weight': 'bolder'
+                                                            }}>Contact Info</div>
+                                                            <div className='logo-menu'></div>
+                                                        </a>
+
                                                     </div>
-                                                </div>
-                                                <div className="footer-image">
-                                                    <div className="logo">
-                                                        <a href="/"><img src={logo} alt="" /></a>
-                                                    </div>
-                                                    <div className="logo-social">
-                                                        <div className="social-info">
-                                                            <i className="fab fa-facebook-f fa-5x" onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
-                                                        </div>
-                                                        <div className="social-info">
-                                                            <i className="fab fa-instagram fa-5x" onClick={() => window.open("https://www.instagram.com/mdsportwear1902/", "_blank")}></i>
-                                                        </div>
-                                                        <div className="social-info">
-                                                            <i className="fab fa-pinterest-p fa-5x" onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
-                                                        </div>
-                                                        <div className="social-info">
-                                                            <i className="fab fa-twitter fa-5x" onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
-                                                        </div>
-                                                        <div className="social-info">
-                                                            <i className="fab fa-tiktok fa-5x" onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
-                                                        </div>
+                                                    <div style={{ 'margin': 'auto' }}>
+                                                        <ul className="menu" style={{ 'top': '20px', 'z-index': '70', 'padding-inline-start': '0px' }}>
+                                                            <div>
+                                                                <div className="address-info">
+                                                                    <div>Email</div>
+                                                                    <div>mddesign.tdd@gmail.com@gmail.com</div>
+                                                                </div>
+                                                                <div className="address-info">
+                                                                    <div>Phone</div>
+                                                                    <div>+84 969 57 64 66</div>
+                                                                </div>
+                                                                <div className="address-info" style={{ 'padding-right': '0px' }}>
+                                                                    <div>Adress</div>
+                                                                    <div>54 Dương Quang Ham, Danang City</div>
+                                                                </div>
+                                                            </div>
+                                                            <div style={{ 'text-align': 'center' }}>
+                                                                <i className="fab fa-facebook-f fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
+                                                                <i className="fab fa-instagram fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
+                                                                <i className="fab fa-pinterest-p fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
+                                                                <i className="fab fa-twitter fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
+                                                                <i className="fab fa-tiktok fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
+                                                            </div>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </footer>

@@ -8,7 +8,10 @@ class Brand extends Component {
             <div>
                 <div className="header" style={{ 'z-index': '99999', 'width': '100%', 'position': 'fixed', 'display': 'grid', 'grid-template-columns': '50% 50%' }}>
                     <div style={{ 'display': 'grid', 'grid-template-columns': '20% 80%' }}>
-                        <a href="/"><img src='./logo.png' alt="" style={{ 'height': '100%', 'width': '100%' }} /></a>
+                        <a href="/">
+                            <div style={{'background-image':'src("./logo.png")'}}></div>
+                            {/* <img src='./logo.png' alt="" style={{ 'height': '100%', 'width': '100%' }} /> */}
+                        </a>
                     </div>
                     <div style={{ 'display': 'grid', 'grid-template-columns': '80% 20%' }}>
                         <ul className="menu" style={{ 'top': '20px', 'z-index': '70', 'padding-inline-start': '0px' }}>

@@ -149,7 +149,7 @@ class Home extends Component {
                             <div className='logo-menu'></div>
                         </a>
                     </div>
-                    <div style={{ 'margin': 'auto', 'padding-left': '40%' }}>
+                    <div className="menu-nav">
                         <ul className="menu" style={{ 'top': '20px', 'z-index': '70', 'padding-inline-start': '0px' }}>
                             <li data-menuanchor="page-home" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
                                 <a href="#page-home">TEAM</a>
@@ -443,16 +443,7 @@ class Home extends Component {
                                 <section className="section" id="page-5" data-anchor="page-contact">
                                     <div className="content" style={{ 'display': 'flex', 'flex-wrap': 'nowrap', 'align-content': 'center', 'justify-content': 'center', 'align-items': 'center' }}>
                                         <div className="contact" style={{ 'width': '100%', 'height': '100%' }}>
-                                            <div className="layout-enhance" style={{
-                                                'display': 'grid',
-                                                'grid-template-columns': '1fr 1fr',
-                                                'grid-template-rows': 'auto',
-                                                'margin': 'auto',
-                                                'height': '75%',
-                                                'justify-items': 'center',
-                                                'position': 'relative',
-                                                'top': '15%'
-                                            }}>
+                                            <div className="layout-enhance-contact">
                                                 <div className="info">
                                                     <div className="us">Cùng chúng tôi chạm tới những cảm xúc!!!</div>
                                                     <form onSubmit={this.contactSubmit.bind(this)}>

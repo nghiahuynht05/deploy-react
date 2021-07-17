@@ -28,7 +28,11 @@ class Home extends Component {
         super(props);
         this.state = {
             fields: {},
-            errors: {}
+            errors: {},
+            success: {
+                done: true
+            },
+            disabled: false
         }
 
         this.showSlides = function (item) {
@@ -47,7 +51,6 @@ class Home extends Component {
         let errors = {};
         let formIsValid = true;
 
-        //Name
         if (!fields["nameUser"]) {
             formIsValid = false;
             errors["nameUser"] = "Cannot be empty";
@@ -88,15 +91,6 @@ class Home extends Component {
         return formIsValid;
     }
 
-    contactSubmit(e) {
-        e.preventDefault();
-
-        if (this.handleValidation()) {
-            return
-        }
-
-    }
-
     handleChange(field, e) {
         let fields = this.state.fields;
         fields[field] = e.target.value;
@@ -130,13 +124,20 @@ class Home extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        let succes = {};
+        if (this.handleValidation()) {
 
-        emailjs.sendForm('service_scsrso7', 'hello', event.target, 'user_gjc6ySIbn2TU7HWFKlN21')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
+            emailjs.sendForm('service_scsrso7', 'template_nm8y44g', event.target, 'user_gjc6ySIbn2TU7HWFKlN21')
+                .then((result) => {
+                    console.log(result.text);
+                }, (error) => {
+                    succes["done"] = 'Send info success';
+                    this.setState({ success: succes });
+                    this.setState({ disabled: true });
+                    console.log(error.text);
+                });
+        }
+
     }
 
 
@@ -446,24 +447,27 @@ class Home extends Component {
                                             <div className="layout-enhance-contact">
                                                 <div className="info">
                                                     <div className="us">Cùng chúng tôi chạm tới những cảm xúc!!!</div>
-                                                    <form onSubmit={this.contactSubmit.bind(this)}>
+                                                    <form onSubmit={this.handleSubmit.bind(this)}>
                                                         <label >Your name (Tên của bạn)
-                                                            <input autocomplete="off" type="text" value={this.state.fields["nameUser"]} onChange={this.handleChange.bind(this, "nameUser")} />
+                                                            <input autocomplete="off" type="text" name='customer_name' value={this.state.fields["nameUser"]} onChange={this.handleChange.bind(this, "nameUser")} />
                                                             <span style={{ color: "red" }}>{this.state.errors["nameUser"]}</span><br />
                                                         </label>
                                                         <label >Your email (Email của bạn)
-                                                            <input autocomplete="off" type="text" value={this.state.fields["emailUser"]} onChange={this.handleChange.bind(this, "emailUser")} />
+                                                            <input autocomplete="off" type="text" name='customer_email' value={this.state.fields["emailUser"]} onChange={this.handleChange.bind(this, "emailUser")} />
                                                             <span style={{ color: "red" }}>{this.state.errors["emailUser"]}</span><br />
                                                         </label>
                                                         <label >Specialization (Chuyên ngành)
-                                                            <input autocomplete="off" type="text" value={this.state.fields["Specialization"]} onChange={this.handleChange.bind(this, "Specialization")} />
+                                                            <input autocomplete="off" type="text" name='spacialization' value={this.state.fields["Specialization"]} onChange={this.handleChange.bind(this, "Specialization")} />
                                                             <span style={{ color: "red" }}>{this.state.errors["Specialization"]}</span><br />
                                                         </label>
                                                         <label >Your messgae (Lời nhắn của bạn)
-                                                            <input autocomplete="off" type="message" value={this.state.fields["messageUser"]} onChange={this.handleChange.bind(this, "messageUser")} />
+                                                            <input autocomplete="off" type="message" name='message' value={this.state.fields["messageUser"]} onChange={this.handleChange.bind(this, "messageUser")} />
                                                             <span style={{ color: "red" }}>{this.state.errors["messageUser"]}</span><br />
                                                         </label>
-                                                        <input type="submit" value="Send" />
+                                                        <label>
+                                                            <input type="submit" value="Send" onChange={this.handleChange.bind('success', "done")} disabled={this.state.disabled} />
+                                                            <span style={{ color: "green" }}>{this.state.success["done"]}</span><br />
+                                                        </label>
                                                     </form>
                                                 </div>
                                                 <div className="contact-image">

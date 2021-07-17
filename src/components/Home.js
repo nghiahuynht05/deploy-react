@@ -173,10 +173,8 @@ class Home extends Component {
                 <ReactFullpage
 
                     //fullpage options
-                    licenseKey={'YOUR_KEY_HERE'}
                     scrollingSpeed={1000} /* Options here */
                     scrollHorizontally={true}  /* Because we are using the extension */
-                    scrollHorizontallyKey={'YOUR KEY HERE'}
 
                     render={({ state, fullpageApi }) => {
                         // const customStype = {
@@ -416,7 +414,7 @@ class Home extends Component {
                                             }}>
                                                 <div className="info">
                                                     <div className="detail">
-                                                        <div className="image"> About US</div>
+                                                        <div className="image"> ABOUT US</div>
                                                         <div className="brand-content">Chúng tôi tin rằng mọi hành trình đều đi từ những ý tưởng. Chúng
                                                             tôi
                                                             muốn được nghe những câu chuyện những ấp ủ và cùng các bạn thực hiện nó. Một sự thật

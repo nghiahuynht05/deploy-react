@@ -93,6 +93,12 @@ a:-webkit-any-link {
   grid-area: f;
 }
 
+.footer-name {
+  font-size: 30px;
+  font-family: "GOTHAM-MEDIUM";
+  font-weight: bolder;
+}
+
 .content {
   height: 100%;
   width: 100%;
@@ -219,7 +225,6 @@ a:-webkit-any-link {
 }
 
 .brand .info {
-  float: left;
   margin: 4% auto;
   text-align: center;
 }
@@ -734,7 +739,6 @@ footer .footer-image .logo img {
 }
 
 .footer-info-name {
-  float: left;
   /* display: inline-block; */
   height: auto;
   font-weight: bolder;
@@ -744,7 +748,6 @@ footer .footer-image .logo img {
 
 .footer-info-address {
   /* display: inline-block; */
-  float: right;
   height: auto;
 }
 
@@ -763,7 +766,6 @@ footer .footer-image .logo img {
 
 .logo-social {
   font-size: 10px;
-  float: right;
   height: auto;
 }
 
@@ -1031,6 +1033,14 @@ footer {
   .menu-nav {
     padding-left: 30%;
   }
+
+  .layout-enhance-contact {
+    height: 70%;
+  }
+
+  .footer-name{
+    font-size: 28px;
+  }
 }
 
 @media only screen and (min-width: 1441px) {
@@ -1093,12 +1103,76 @@ footer {
     width: 85%;
   }
   .layout-enhance-contact {
-    height: 65%;
+    height: 70%;
+  }
+
+  .footer-name{
+    font-size: 20px;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   #design-with {
     left: 55%;
+  }
+
+  .band .design {
+    font-size: 80px;
+  }
+  .band .magic {
+    font-size: 80px;
+  }
+
+  .header .menu {
+    font-size: 12px;
+  }
+
+  .band .banner-band {
+    padding-top: 20%;
+  }
+
+  .band .brand {
+    top: 23%;
+  }
+
+  .band .banner {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50% 50%;
+    padding-top: 10%;
+  }
+  .band .banner-info {
+    margin: auto;
+  }
+
+  .band-sun {
+    width: 85%;
+    background-size: contain;
+  }
+  .band-sun .sun {
+    background-size: contain;
+  }
+
+  .band .banner-logo {
+    padding-top: 10%;
+  }
+
+  .layout-enhance {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .brand .info {
+    margin: 0px;
+  }
+  .info .detail .image {
+    font-size: 120px;
+    padding-top: 14%;
+  }
+
+  .brand .slider-show {
+    width: 40%;
+  }
+
+  .logo .slider-logo {
+    padding-left: 0px;
   }
 }

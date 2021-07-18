@@ -478,9 +478,7 @@ class Home extends Component {
                                                 <div className="header" style={{ 'z-index': '99999', 'width': '100%', 'position': 'fixed', 'display': 'grid', 'grid-template-columns': '50% 50%' }}>
                                                     <div style={{ 'display': 'grid', 'grid-template-columns': '25% 75%', 'grid-template-rows': '100px' }}>
                                                         <a href="/" style={{ "margin": "auto" }}>
-                                                            <div style={{
-                                                                'font-size': '30px', 'font-family': 'GOTHAM-MEDIUM', 'font-weight': 'bolder'
-                                                            }}>Contact Info</div>
+                                                            <div className='footer-name'>Contact Info</div>
                                                             <div className='logo-menu'></div>
                                                         </a>
 
@@ -501,7 +499,11 @@ class Home extends Component {
                                                                     <div>54 Dương Quang Ham, Danang City</div>
                                                                 </div>
                                                             </div>
-                                                            <div style={{ 'text-align': 'center' }}>
+                                                            <div style={{
+                                                                'display': 'flex',
+                                                                'justify-content': 'space-around',
+                                                                'flex-wrap': 'nowrap'
+                                                            }}>
                                                                 <i className="fab fa-facebook-f fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
                                                                 <i className="fab fa-instagram fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
                                                                 <i className="fab fa-pinterest-p fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>

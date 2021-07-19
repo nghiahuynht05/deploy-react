@@ -4,6 +4,8 @@ import {
     Link
 } from "react-router-dom";
 
+import emailjs from 'emailjs-com';
+
 import slider1 from '../image/slider-1.jpg';
 import slider2 from '../image/slider-2.jpg';
 import slider3 from '../image/slider-3.jpg';
@@ -20,14 +22,19 @@ import slidershow9 from '../image/logo-09.jpg';
 import slidershow10 from '../image/logo-10.jpg';
 import slidershow11 from '../image/logo-11.jpg';
 import slidershow12 from '../image/logo-12.jpg';
-import logo from '../image/logo.png';
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            display: 'none'
-        };
+            fields: {},
+            errors: {},
+            success: {
+                done: true
+            },
+            disabled: false
+        }
+
         this.showSlides = function (item) {
             var i;
             var slides = document.getElementsByClassName("mySlides");
@@ -36,6 +43,58 @@ class Home extends Component {
             }
             slides[item].style.display = "block";
         }
+
+    }
+
+    handleValidation() {
+        let fields = this.state.fields;
+        let errors = {};
+        let formIsValid = true;
+
+        if (!fields["nameUser"]) {
+            formIsValid = false;
+            errors["nameUser"] = "Cannot be empty";
+        }
+
+        if (!fields["Specialization"]) {
+            formIsValid = false;
+            errors["Specialization"] = "Cannot be empty";
+        }
+
+        if (!fields["messageUser"]) {
+            formIsValid = false;
+            errors["messageUser"] = "Cannot be empty";
+        }
+        if (!fields["emailUser"]) {
+            formIsValid = false;
+            errors["emailUser"] = "Cannot be empty";
+        }
+
+
+        //Email
+        if (!fields["emailUser"]) {
+            formIsValid = false;
+            errors["emailUser"] = "Cannot be empty";
+        }
+
+        if (typeof fields["emailUser"] !== "undefined") {
+            let lastAtPos = fields["emailUser"].lastIndexOf('@');
+            let lastDotPos = fields["emailUser"].lastIndexOf('.');
+
+            if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["emailUser"].indexOf('@@') === -1 && lastDotPos > 2 && (fields["emailUser"].length - lastDotPos) > 2)) {
+                formIsValid = false;
+                errors["emailUser"] = "Email is not valid";
+            }
+        }
+
+        this.setState({ errors: errors });
+        return formIsValid;
+    }
+
+    handleChange(field, e) {
+        let fields = this.state.fields;
+        fields[field] = e.target.value;
+        this.setState({ fields });
     }
 
     handleClick = (item) => {
@@ -63,6 +122,25 @@ class Home extends Component {
     }
 
 
+    handleSubmit(event) {
+        event.preventDefault();
+        let succes = {};
+        if (this.handleValidation()) {
+
+            emailjs.sendForm('service_scsrso7', 'template_nm8y44g', event.target, 'user_gjc6ySIbn2TU7HWFKlN21')
+                .then((result) => {
+                    console.log(result.text);
+                }, (error) => {
+                    succes["done"] = 'Send info success';
+                    this.setState({ success: succes });
+                    this.setState({ disabled: true });
+                    console.log(error.text);
+                });
+        }
+
+    }
+
+
     render() {
         return (
             <div>
@@ -72,7 +150,7 @@ class Home extends Component {
                             <div className='logo-menu'></div>
                         </a>
                     </div>
-                    <div style={{ 'margin': 'auto', 'padding-left': '40%' }}>
+                    <div className="menu-nav">
                         <ul className="menu" style={{ 'top': '20px', 'z-index': '70', 'padding-inline-start': '0px' }}>
                             <li data-menuanchor="page-home" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
                                 <a href="#page-home">TEAM</a>
@@ -95,16 +173,14 @@ class Home extends Component {
                 <ReactFullpage
 
                     //fullpage options
-                    licenseKey={'YOUR_KEY_HERE'}
                     scrollingSpeed={1000} /* Options here */
                     scrollHorizontally={true}  /* Because we are using the extension */
-                    scrollHorizontallyKey={'YOUR KEY HERE'}
 
                     render={({ state, fullpageApi }) => {
-                        const customStype = {
-                            "font-family": "Gotham-Medium",
-                            "font-weight": "bolder"
-                        }
+                        // const customStype = {
+                        //     "font-family": "Gotham-Medium",
+                        //     "font-weight": "bolder"
+                        // }
 
                         return (
                             <ReactFullpage.Wrapper>
@@ -170,7 +246,7 @@ class Home extends Component {
                                                             doanh
                                                             nghiệp
                                                             cần xây dựng hình ảnh và nhận diện thương hiệu đầy đủ, mạnh mẽ.</div>
-                                                        <a href="/" style={{ "margin": "auto" }}>
+                                                        <a href="/brand" style={{ "margin": "auto" }}>
                                                             <div className='more-button'></div>
                                                         </a>
                                                     </div>
@@ -205,120 +281,114 @@ class Home extends Component {
                                     </div>
                                 </section>
                                 <section className="section" id="page-3" data-anchor="page-logo">
-                                    <div className="container">
-                                        <div className="content">
-                                            <div className="logo">
-                                                <div className="layout-enhance">
-                                                    <div className="info">
-                                                        <div className="detail">
-                                                            <div className="image">LOGO</div>
-                                                            <div className="brand-content">Logo mang lại cho doanh nghiệp của bạn một bản sắc, làm cho
-                                                                thương
-                                                                hiệu của bạn trở nên gắn bó hơn, cung cấp nền tảng cho những nổ lực xâyy dựng thương
-                                                                hiệu
-                                                                trong tương lai của bạn và hơn thế nữa!</div>
-                                                            <div style={{ 'padding-top': '5%' }}>
-                                                                <button className="botton-type">
-                                                                    <Link to="/logo">
-                                                                        <div className="button-text"><span>MORE...</span></div>
-                                                                    </Link>
-                                                                </button>
+                                    <div className="content" style={{ 'display': 'flex', 'flex-wrap': 'nowrap', 'align-content': 'center', 'justify-content': 'center', 'align-items': 'center' }}>
+                                        <div className="logo" style={{ 'width': '100%' }}>
+                                            <div className="layout-enhance">
+                                                <div className="info">
+                                                    <div className="detail">
+                                                        <div className="image">LOGO</div>
+                                                        <div className="brand-content">Logo mang lại cho doanh nghiệp của bạn một bản sắc, làm cho
+                                                            thương
+                                                            hiệu của bạn trở nên gắn bó hơn, cung cấp nền tảng cho những nổ lực xâyy dựng thương
+                                                            hiệu
+                                                            trong tương lai của bạn và hơn thế nữa!</div>
+                                                        <a href="/logo" style={{ "margin": "auto" }}>
+                                                            <div className='more-button'></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div className="slider-logo">
+                                                    <div className="parent">
+                                                        <div className="movingDiv">
+                                                            <div className="rect ">
+                                                                <div className="slideshow">
+                                                                    <div className="image">
+                                                                        <img src={slidershow1} alt='' />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="rect ">
+                                                                <div className="slideshow">
+                                                                    <div className="image">
+                                                                        <img src={slidershow2} alt='' />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="rect ">
+                                                                <div className="slideshow">
+                                                                    <div className="image">
+                                                                        <img src={slidershow3} alt='' />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="rect ">
+                                                                <div className="slideshow">
+                                                                    <div className="image">
+                                                                        <img src={slidershow12} alt='' />
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div className="slider-logo">
-                                                        <div className="parent">
-                                                            <div className="movingDiv">
-                                                                <div className="rect ">
-                                                                    <div className="slideshow">
-                                                                        <div className="image">
-                                                                            <img src={slidershow1} alt='' />
-                                                                        </div>
+                                                    <div className="parent">
+                                                        <div className="movingDivDown">
+                                                            <div className="rect ">
+                                                                <div className="slideshow" onclick="window.open('./brand.html','_blank')">
+                                                                    <div className="image">
+                                                                        <img src={slidershow4} alt='' />
                                                                     </div>
                                                                 </div>
-                                                                <div className="rect ">
-                                                                    <div className="slideshow">
-                                                                        <div className="image">
-                                                                            <img src={slidershow2} alt='' />
-                                                                        </div>
+                                                            </div>
+                                                            <div className="rect ">
+                                                                <div className="slideshow">
+                                                                    <div className="image">
+                                                                        <img src={slidershow5} alt='' />
                                                                     </div>
                                                                 </div>
-                                                                <div className="rect ">
-                                                                    <div className="slideshow">
-                                                                        <div className="image">
-                                                                            <img src={slidershow3} alt='' />
-                                                                        </div>
+                                                            </div>
+                                                            <div className="rect ">
+                                                                <div className="slideshow">
+                                                                    <div className="image">
+                                                                        <img src={slidershow6} alt='' />
                                                                     </div>
                                                                 </div>
-                                                                <div className="rect ">
-                                                                    <div className="slideshow">
-                                                                        <div className="image">
-                                                                            <img src={slidershow12} alt='' />
-                                                                        </div>
+                                                            </div>
+                                                            <div className="rect ">
+                                                                <div className="slideshow">
+                                                                    <div className="image">
+                                                                        <img src={slidershow11} alt='' />
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div className="parent">
-                                                            <div className="movingDivDown">
-                                                                <div className="rect ">
-                                                                    <div className="slideshow" onclick="window.open('./brand.html','_blank')">
-                                                                        <div className="image">
-                                                                            <img src={slidershow4} alt='' />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="rect ">
-                                                                    <div className="slideshow">
-                                                                        <div className="image">
-                                                                            <img src={slidershow5} alt='' />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="rect ">
-                                                                    <div className="slideshow">
-                                                                        <div className="image">
-                                                                            <img src={slidershow6} alt='' />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="rect ">
-                                                                    <div className="slideshow">
-                                                                        <div className="image">
-                                                                            <img src={slidershow11} alt='' />
-                                                                        </div>
+                                                    </div>
+                                                    <div className="parent">
+                                                        <div className="movingDiv">
+                                                            <div className="rect ">
+                                                                <div className="slideshow">
+                                                                    <div className="image">
+                                                                        <img src={slidershow7} alt='' />
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div className="parent">
-                                                            <div className="movingDiv">
-                                                                <div className="rect ">
-                                                                    <div className="slideshow">
-                                                                        <div className="image">
-                                                                            <img src={slidershow7} alt='' />
-                                                                        </div>
+                                                            <div className="rect ">
+                                                                <div className="slideshow">
+                                                                    <div className="image">
+                                                                        <img src={slidershow8} alt='' />
                                                                     </div>
                                                                 </div>
-                                                                <div className="rect ">
-                                                                    <div className="slideshow">
-                                                                        <div className="image">
-                                                                            <img src={slidershow8} alt='' />
-                                                                        </div>
+                                                            </div>
+                                                            <div className="rect ">
+                                                                <div className="slideshow">
+                                                                    <div className="image">
+                                                                        <img src={slidershow9} alt='' />
                                                                     </div>
                                                                 </div>
-                                                                <div className="rect ">
-                                                                    <div className="slideshow">
-                                                                        <div className="image">
-                                                                            <img src={slidershow9} alt='' />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="rect ">
-                                                                    <div className="slideshow">
-                                                                        <div className="image">
-                                                                            <img src={slidershow10} alt='' />
-                                                                        </div>
+                                                            </div>
+                                                            <div className="rect ">
+                                                                <div className="slideshow">
+                                                                    <div className="image">
+                                                                        <img src={slidershow10} alt='' />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -330,32 +400,39 @@ class Home extends Component {
                                     </div>
                                 </section>
                                 <section className="section" id="page-4" data-anchor="page-about">
-                                    <div className="container">
-                                        <div className="content">
-                                            <div className="aboutus">
-                                                <div className="layout" style={{ height: '85%' }}>
-                                                    <div className="info">
-                                                        <div className="detail">
-                                                            <div className="image"> About US</div>
-                                                            <div className="brand-content">Chúng tôi tin rằng mọi hành trình đều đi từ những ý tưởng. Chúng
-                                                                tôi
-                                                                muốn được nghe những câu chuyện những ấp ủ và cùng các bạn thực hiện nó. Một sự thật
-                                                                không
-                                                                thể chối cãi là chúng ta sẽ không biết cuối con đường là điều gì khi không quyết tâm đi
-                                                                hết
-                                                                con đường đó.</div>
-                                                            <div style={{ 'padding-top': '5%' }}>
-                                                                <button className="botton-type">
-                                                                    <Link to='/about'>
-                                                                        <div className="button-text"><span>MORE...</span></div>
-                                                                    </Link>
-                                                                </button>
-                                                            </div>
+                                    <div className="content" style={{ 'display': 'flex', 'flex-wrap': 'nowrap', 'align-content': 'center', 'justify-content': 'center', 'align-items': 'center' }}>
+                                        <div className="aboutus" style={{ 'width': '100%', 'height': '100%' }}>
+                                            <div className="layout-enhance" style={{
+                                                'display': 'grid',
+                                                'grid-template-columns': '1fr 1fr',
+                                                'grid-template-rows': 'auto',
+                                                'margin': 'auto',
+                                                'height': '80%',
+                                                'justify-items': 'center',
+                                                'position': 'relative',
+                                                'top': '15%'
+                                            }}>
+                                                <div className="info">
+                                                    <div className="detail">
+                                                        <div className="image"> ABOUT US</div>
+                                                        <div className="brand-content">Chúng tôi tin rằng mọi hành trình đều đi từ những ý tưởng. Chúng
+                                                            tôi
+                                                            muốn được nghe những câu chuyện những ấp ủ và cùng các bạn thực hiện nó. Một sự thật
+                                                            không
+                                                            thể chối cãi là chúng ta sẽ không biết cuối con đường là điều gì khi không quyết tâm đi
+                                                            hết
+                                                            con đường đó.</div>
+                                                        <div style={{ 'padding-top': '5%' }}>
+                                                            <button className="botton-type">
+                                                                <Link to='/about'>
+                                                                    <div className="button-text"><span>MORE...</span></div>
+                                                                </Link>
+                                                            </button>
                                                         </div>
                                                     </div>
-                                                    <div className="about-image">
-                                                        <div className="image">
-                                                        </div>
+                                                </div>
+                                                <div className="about-image">
+                                                    <div className="image">
                                                     </div>
                                                 </div>
                                             </div>
@@ -364,25 +441,31 @@ class Home extends Component {
                                 </section>
                                 <section className="section" id="page-5" data-anchor="page-contact">
                                     <div className="content" style={{ 'display': 'flex', 'flex-wrap': 'nowrap', 'align-content': 'center', 'justify-content': 'center', 'align-items': 'center' }}>
-
-                                        <div className="contact" style={{ 'width': '100%', 'height': '55%' }}>
-                                            <div className="layout-enhance">
+                                        <div className="contact" style={{ 'width': '100%', 'height': '100%' }}>
+                                            <div className="layout-enhance-contact">
                                                 <div className="info">
                                                     <div className="us">Cùng chúng tôi chạm tới những cảm xúc!!!</div>
-                                                    <form action=''>
-                                                        <label htmlFor="fname">Your name (Tên của bạn)</label><br></br>
-                                                        <input autoComplete="off" type="text" id="fname" name="firstname" placeholder="" /><br></br>
-                                                        <label htmlFor="lname">Your email (Email của bạn)</label><br></br>
-                                                        <input autoComplete="off" type="text" id="lname" name="lastname" placeholder="" /><br></br>
-                                                        <label htmlFor="lname">Specialization (Chuyên ngành)</label><br></br>
-                                                        <input autoComplete="off" type="text" id="lname" name="lastname" placeholder="" /><br></br>
-                                                        <label htmlFor="lname">Your messgae (Lời nhắn của bạn)</label><br></br>
-                                                        <input autoComplete="off" type="message" id="lname" name="lastname" placeholder="" /><br></br>
-                                                        <div>
-                                                            <button className="botton-type" onclick="navToLink('more-about')" style={customStype}>
-                                                                <div className="button-text"><span>Send</span></div>
-                                                            </button>
-                                                        </div>
+                                                    <form onSubmit={this.handleSubmit.bind(this)}>
+                                                        <label >Your name (Tên của bạn)
+                                                            <input autocomplete="off" type="text" name='customer_name' value={this.state.fields["nameUser"]} onChange={this.handleChange.bind(this, "nameUser")} />
+                                                            <span style={{ color: "red" }}>{this.state.errors["nameUser"]}</span><br />
+                                                        </label>
+                                                        <label >Your email (Email của bạn)
+                                                            <input autocomplete="off" type="text" name='customer_email' value={this.state.fields["emailUser"]} onChange={this.handleChange.bind(this, "emailUser")} />
+                                                            <span style={{ color: "red" }}>{this.state.errors["emailUser"]}</span><br />
+                                                        </label>
+                                                        <label >Specialization (Chuyên ngành)
+                                                            <input autocomplete="off" type="text" name='spacialization' value={this.state.fields["Specialization"]} onChange={this.handleChange.bind(this, "Specialization")} />
+                                                            <span style={{ color: "red" }}>{this.state.errors["Specialization"]}</span><br />
+                                                        </label>
+                                                        <label >Your messgae (Lời nhắn của bạn)
+                                                            <input autocomplete="off" type="message" name='message' value={this.state.fields["messageUser"]} onChange={this.handleChange.bind(this, "messageUser")} />
+                                                            <span style={{ color: "red" }}>{this.state.errors["messageUser"]}</span><br />
+                                                        </label>
+                                                        <label>
+                                                            <input type="submit" value="Send" onChange={this.handleChange.bind('success', "done")} disabled={this.state.disabled} />
+                                                            <span style={{ color: "green" }}>{this.state.success["done"]}</span><br />
+                                                        </label>
                                                     </form>
                                                 </div>
                                                 <div className="contact-image">
@@ -395,9 +478,7 @@ class Home extends Component {
                                                 <div className="header" style={{ 'z-index': '99999', 'width': '100%', 'position': 'fixed', 'display': 'grid', 'grid-template-columns': '50% 50%' }}>
                                                     <div style={{ 'display': 'grid', 'grid-template-columns': '25% 75%', 'grid-template-rows': '100px' }}>
                                                         <a href="/" style={{ "margin": "auto" }}>
-                                                            <div style={{
-                                                                'font-size': '30px', 'font-family': 'GOTHAM-MEDIUM', 'font-weight': 'bolder'
-                                                            }}>Contact Info</div>
+                                                            <div className='footer-name'>Contact Info</div>
                                                             <div className='logo-menu'></div>
                                                         </a>
 
@@ -418,7 +499,11 @@ class Home extends Component {
                                                                     <div>54 Dương Quang Ham, Danang City</div>
                                                                 </div>
                                                             </div>
-                                                            <div style={{ 'text-align': 'center' }}>
+                                                            <div style={{
+                                                                'display': 'flex',
+                                                                'justify-content': 'space-around',
+                                                                'flex-wrap': 'nowrap'
+                                                            }}>
                                                                 <i className="fab fa-facebook-f fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
                                                                 <i className="fab fa-instagram fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
                                                                 <i className="fab fa-pinterest-p fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>

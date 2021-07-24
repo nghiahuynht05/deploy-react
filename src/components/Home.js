@@ -140,6 +140,13 @@ class Home extends Component {
 
     }
 
+    menuClick() {
+        let burger = document.getElementById('burger'),
+            nav = document.getElementById('main-nav');
+        burger.classList.toggle('is-open');
+        nav.classList.toggle('is-open');
+    };
+
 
     render() {
         return (
@@ -152,22 +159,47 @@ class Home extends Component {
                     </div>
                     <div className="menu-nav">
                         <ul className="menu" style={{ 'top': '20px', 'zIndex': '70', 'paddingInlineStart': '0px' }}>
-                            <li data-menuanchor="page-home" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
+                            <li data-menuanchor="page-home" style={{ 'display': 'inline', 'cursor': 'pointer' }} >
                                 <a href="#page-home">TEAM</a>
                             </li>
-                            <li data-menuanchor="page-brand" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
+                            <li data-menuanchor="page-brand" style={{ 'display': 'inline', 'cursor': 'pointer' }} >
                                 <a href="#page-brand">BRAND</a>
                             </li>
-                            <li data-menuanchor="page-logo" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
+                            <li data-menuanchor="page-logo" style={{ 'display': 'inline', 'cursor': 'pointer' }} >
                                 <a href="#page-logo">LOGO</a>
                             </li>
-                            <li data-menuanchor="page-about" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
+                            <li data-menuanchor="page-about" style={{ 'display': 'inline', 'cursor': 'pointer' }} >
                                 <a href="#page-about">ABOUT US</a>
                             </li>
-                            <li data-menuanchor="page-contact" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
+                            <li data-menuanchor="page-contact" style={{ 'display': 'inline', 'cursor': 'pointer' }} >
                                 <a href="#page-contact">CONTACT</a>
                             </li>
                         </ul>
+                    </div>
+
+                    <div className="menu-nav-mobi">
+                        <button id="burger" className="open-main-nav" onClick={() => this.menuClick()} >
+                            <span className="burger" ></span>
+                        </button>
+                        <nav className="main-nav" id="main-nav">
+                            <ul>
+                                <li data-menuanchor="page-home" style={{ 'display': 'inline', 'cursor': 'pointer' }} >
+                                    <a href="#page-home">TEAM</a>
+                                </li>
+                                <li data-menuanchor="page-brand" style={{ 'display': 'inline', 'cursor': 'pointer' }} >
+                                    <a href="#page-brand">BRAND</a>
+                                </li>
+                                <li data-menuanchor="page-logo" style={{ 'display': 'inline', 'cursor': 'pointer' }} >
+                                    <a href="#page-logo">LOGO</a>
+                                </li>
+                                <li data-menuanchor="page-about" style={{ 'display': 'inline', 'cursor': 'pointer' }} >
+                                    <a href="#page-about">ABOUT US</a>
+                                </li>
+                                <li data-menuanchor="page-contact" style={{ 'display': 'inline', 'cursor': 'pointer' }} >
+                                    <a href="#page-contact">CONTACT</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
                 <ReactFullpage
@@ -394,16 +426,7 @@ class Home extends Component {
                                 <section className="section" id="page-4" data-anchor="page-about">
                                     <div className="content" style={{ 'display': 'flex', 'flexWrap': 'nowrap', 'alignContent': 'center', 'justifyContent': 'center', 'alignItems': 'center' }}>
                                         <div className="aboutus" style={{ 'width': '100%', 'height': '100%' }}>
-                                            <div className="layout-enhance" style={{
-                                                'display': 'grid',
-                                                'gridTemplateColumns': '1fr 1fr',
-                                                'gridTemplateRows': 'auto',
-                                                'margin': 'auto',
-                                                'height': '80%',
-                                                'justifyItems': 'center',
-                                                'position': 'relative',
-                                                'top': '15%'
-                                            }}>
+                                            <div className="layout-enhance-aboutus">
                                                 <div className="info">
                                                     <div className="detail">
                                                         <div className="image"> ABOUT US</div>
@@ -496,11 +519,11 @@ class Home extends Component {
                                                                 'justifyContent': 'space-around',
                                                                 'flexWrap': 'nowrap'
                                                             }}>
-                                                                <i className="fab fa-facebook-f fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
-                                                                <i className="fab fa-instagram fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
-                                                                <i className="fab fa-pinterest-p fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
-                                                                <i className="fab fa-twitter fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
-                                                                <i className="fab fa-tiktok fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
+                                                                <i className="fab fa-facebook-f fa-3x icon-social" onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
+                                                                <i className="fab fa-instagram fa-3x icon-social" onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
+                                                                <i className="fab fa-pinterest-p fa-3x icon-social" onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
+                                                                <i className="fab fa-twitter fa-3x icon-social" onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
+                                                                <i className="fab fa-tiktok fa-3x icon-social" onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
                                                             </div>
                                                         </ul>
                                                     </div>

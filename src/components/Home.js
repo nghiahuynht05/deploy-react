@@ -144,14 +144,14 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <div className="header" style={{ 'z-index': '99999', 'width': '100%', 'position': 'fixed', 'display': 'grid', 'grid-template-columns': '50% 50%' }}>
-                    <div style={{ 'display': 'grid', 'grid-template-columns': '25% 75%', 'grid-template-rows': '100px' }}>
+                <div className="header" style={{ 'zIndex': '99999', 'width': '100%', 'position': 'fixed', 'display': 'grid', 'gridTemplateColumns': '50% 50%' }}>
+                    <div style={{ 'display': 'grid', 'gridTemplateColumns': '25% 75%', 'gridTemplateRows': '100px' }}>
                         <a href="/" style={{ "margin": "auto" }}>
                             <div className='logo-menu'></div>
                         </a>
                     </div>
                     <div className="menu-nav">
-                        <ul className="menu" style={{ 'top': '20px', 'z-index': '70', 'padding-inline-start': '0px' }}>
+                        <ul className="menu" style={{ 'top': '20px', 'zIndex': '70', 'paddingInlineStart': '0px' }}>
                             <li data-menuanchor="page-home" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
                                 <a href="#page-home">TEAM</a>
                             </li>
@@ -197,14 +197,6 @@ class Home extends Component {
 
                                                         </div>
                                                         <div className="brand">Brand</div>
-                                                        {/* <div style={{ 'display': 'grid', 'grid-template-columns': '1fr 1fr', 'grid-template-rows': 'auto' }}>
-                                                            <div className="magic">
-                                                                <span> Magis</span>
-                                                                <div style={{ 'font-size': '42px', 'position': 'absolute', 'top': '15%', 'text-align': 'center', 'width': '50%', 'padding-top': '08%' }}>Brand</div>
-                                                            </div>
-                                                            <div className="design" id='design-with'>Design</div>
-
-                                                        </div> */}
                                                     </div>
                                                     <div className="banner">
                                                         <div className="banner-info">
@@ -233,7 +225,7 @@ class Home extends Component {
                                     </div>
                                 </section>
                                 <section className="section" id="page-2" data-anchor="page-brand">
-                                    <div className="content" style={{ 'display': 'flex', 'flex-wrap': 'nowrap', 'align-content': 'center', 'justify-content': 'center', 'align-items': 'center' }}>
+                                    <div className="content" style={{ 'display': 'flex', 'flexWrap': 'nowrap', 'alignContent': 'center', 'justifyContent': 'center', 'alignItems': 'center' }}>
                                         <div className="brand" style={{ 'width': '100%' }}>
                                             <div className="layout-enhance">
                                                 <div className="info">
@@ -281,7 +273,7 @@ class Home extends Component {
                                     </div>
                                 </section>
                                 <section className="section" id="page-3" data-anchor="page-logo">
-                                    <div className="content" style={{ 'display': 'flex', 'flex-wrap': 'nowrap', 'align-content': 'center', 'justify-content': 'center', 'align-items': 'center' }}>
+                                    <div className="content" style={{ 'display': 'flex', 'flexWrap': 'nowrap', 'alignContent': 'center', 'justifyContent': 'center', 'alignItems': 'center' }}>
                                         <div className="logo" style={{ 'width': '100%' }}>
                                             <div className="layout-enhance">
                                                 <div className="info">
@@ -333,7 +325,7 @@ class Home extends Component {
                                                     <div className="parent">
                                                         <div className="movingDivDown">
                                                             <div className="rect ">
-                                                                <div className="slideshow" onclick="window.open('./brand.html','_blank')">
+                                                                <div className="slideshow">
                                                                     <div className="image">
                                                                         <img src={slidershow4} alt='' />
                                                                     </div>
@@ -400,15 +392,15 @@ class Home extends Component {
                                     </div>
                                 </section>
                                 <section className="section" id="page-4" data-anchor="page-about">
-                                    <div className="content" style={{ 'display': 'flex', 'flex-wrap': 'nowrap', 'align-content': 'center', 'justify-content': 'center', 'align-items': 'center' }}>
+                                    <div className="content" style={{ 'display': 'flex', 'flexWrap': 'nowrap', 'alignContent': 'center', 'justifyContent': 'center', 'alignItems': 'center' }}>
                                         <div className="aboutus" style={{ 'width': '100%', 'height': '100%' }}>
                                             <div className="layout-enhance" style={{
                                                 'display': 'grid',
-                                                'grid-template-columns': '1fr 1fr',
-                                                'grid-template-rows': 'auto',
+                                                'gridTemplateColumns': '1fr 1fr',
+                                                'gridTemplateRows': 'auto',
                                                 'margin': 'auto',
                                                 'height': '80%',
-                                                'justify-items': 'center',
+                                                'justifyItems': 'center',
                                                 'position': 'relative',
                                                 'top': '15%'
                                             }}>
@@ -422,7 +414,7 @@ class Home extends Component {
                                                             thể chối cãi là chúng ta sẽ không biết cuối con đường là điều gì khi không quyết tâm đi
                                                             hết
                                                             con đường đó.</div>
-                                                        <div style={{ 'padding-top': '5%' }}>
+                                                        <div style={{ 'paddingTop': '5%' }}>
                                                             <button className="botton-type">
                                                                 <Link to='/about'>
                                                                     <div className="button-text"><span>MORE...</span></div>
@@ -440,26 +432,26 @@ class Home extends Component {
                                     </div>
                                 </section>
                                 <section className="section" id="page-5" data-anchor="page-contact">
-                                    <div className="content" style={{ 'display': 'flex', 'flex-wrap': 'nowrap', 'align-content': 'center', 'justify-content': 'center', 'align-items': 'center' }}>
+                                    <div className="content" style={{ 'display': 'flex', 'flexWrap': 'nowrap', 'alignContent': 'center', 'justifyContent': 'center', 'alignItems': 'center' }}>
                                         <div className="contact" style={{ 'width': '100%', 'height': '100%' }}>
                                             <div className="layout-enhance-contact">
                                                 <div className="info">
                                                     <div className="us">Cùng chúng tôi chạm tới những cảm xúc!!!</div>
                                                     <form onSubmit={this.handleSubmit.bind(this)}>
                                                         <label >Your name (Tên của bạn)
-                                                            <input autocomplete="off" type="text" name='customer_name' value={this.state.fields["nameUser"]} onChange={this.handleChange.bind(this, "nameUser")} />
+                                                            <input autoComplete="off" type="text" name='customer_name' value={this.state.fields["nameUser"]} onChange={this.handleChange.bind(this, "nameUser")} />
                                                             <span style={{ color: "red" }}>{this.state.errors["nameUser"]}</span><br />
                                                         </label>
                                                         <label >Your email (Email của bạn)
-                                                            <input autocomplete="off" type="text" name='customer_email' value={this.state.fields["emailUser"]} onChange={this.handleChange.bind(this, "emailUser")} />
+                                                            <input autoComplete="off" type="text" name='customer_email' value={this.state.fields["emailUser"]} onChange={this.handleChange.bind(this, "emailUser")} />
                                                             <span style={{ color: "red" }}>{this.state.errors["emailUser"]}</span><br />
                                                         </label>
                                                         <label >Specialization (Chuyên ngành)
-                                                            <input autocomplete="off" type="text" name='spacialization' value={this.state.fields["Specialization"]} onChange={this.handleChange.bind(this, "Specialization")} />
+                                                            <input autoComplete="off" type="text" name='spacialization' value={this.state.fields["Specialization"]} onChange={this.handleChange.bind(this, "Specialization")} />
                                                             <span style={{ color: "red" }}>{this.state.errors["Specialization"]}</span><br />
                                                         </label>
                                                         <label >Your messgae (Lời nhắn của bạn)
-                                                            <input autocomplete="off" type="message" name='message' value={this.state.fields["messageUser"]} onChange={this.handleChange.bind(this, "messageUser")} />
+                                                            <input autoComplete="off" type="message" name='message' value={this.state.fields["messageUser"]} onChange={this.handleChange.bind(this, "messageUser")} />
                                                             <span style={{ color: "red" }}>{this.state.errors["messageUser"]}</span><br />
                                                         </label>
                                                         <label>
@@ -475,8 +467,8 @@ class Home extends Component {
                                                 {/* </div> */}
                                             </div>
                                             <footer className="footer">
-                                                <div className="header" style={{ 'z-index': '99999', 'width': '100%', 'position': 'fixed', 'display': 'grid', 'grid-template-columns': '50% 50%' }}>
-                                                    <div style={{ 'display': 'grid', 'grid-template-columns': '25% 75%', 'grid-template-rows': '100px' }}>
+                                                <div className="header" style={{ 'zIndex': '99999', 'width': '100%', 'position': 'fixed', 'display': 'grid', 'gridTemplateColumns': '50% 50%' }}>
+                                                    <div style={{ 'display': 'grid', 'gridTemplateColumns': '25% 75%', 'gridTemplateRows': '100px' }}>
                                                         <a href="/" style={{ "margin": "auto" }}>
                                                             <div className='footer-name'>Contact Info</div>
                                                             <div className='logo-menu'></div>
@@ -484,7 +476,7 @@ class Home extends Component {
 
                                                     </div>
                                                     <div style={{ 'margin': 'auto' }}>
-                                                        <ul className="menu" style={{ 'top': '20px', 'z-index': '70', 'padding-inline-start': '0px' }}>
+                                                        <ul className="menu" style={{ 'top': '20px', 'zIndex': '70', 'paddingInlineStart': '0px' }}>
                                                             <div>
                                                                 <div className="address-info">
                                                                     <div>Email</div>
@@ -494,15 +486,15 @@ class Home extends Component {
                                                                     <div>Phone</div>
                                                                     <div>+84 969 57 64 66</div>
                                                                 </div>
-                                                                <div className="address-info" style={{ 'padding-right': '0px' }}>
+                                                                <div className="address-info" style={{ 'paddingRight': '0px' }}>
                                                                     <div>Adress</div>
                                                                     <div>54 Dương Quang Ham, Danang City</div>
                                                                 </div>
                                                             </div>
                                                             <div style={{
                                                                 'display': 'flex',
-                                                                'justify-content': 'space-around',
-                                                                'flex-wrap': 'nowrap'
+                                                                'justifyContent': 'space-around',
+                                                                'flexWrap': 'nowrap'
                                                             }}>
                                                                 <i className="fab fa-facebook-f fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
                                                                 <i className="fab fa-instagram fa-3x" style={{ 'display': 'inline', 'padding': '0px 15px', 'cursor': 'pointer' }} onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>

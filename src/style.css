@@ -1198,7 +1198,7 @@ footer {
 
   .menu-nav-mobi {
     display: block;
-    height: 100vh;
+    /* height: 100vh; */
   }
   #design-with {
     left: 55%;
@@ -1408,9 +1408,13 @@ footer {
   }
 
   .main-nav {
-    height: 100%;
+    display: none;
   }
 
+  .main-nav.is-open {
+    display: block;
+    height: 100vh;
+  }
   .main-nav.is-open a {
     opacity: 1;
     transform: translateY(0);

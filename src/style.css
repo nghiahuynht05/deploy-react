@@ -32,6 +32,7 @@ a:-webkit-any-link {
   transform: translate3d(0px, 0px, 0px);
   transition: all 700ms ease 0s;
 }
+
 .container {
   width: 80%;
   margin: auto;
@@ -513,6 +514,7 @@ a:-webkit-any-link {
   padding-top: 7%;
   padding-bottom: 7%;
 }
+
 .layout-enhance-aboutus {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -523,6 +525,7 @@ a:-webkit-any-link {
   position: relative;
   top: 15%;
 }
+
 .contact {
   width: 100%;
   height: 55%;
@@ -798,7 +801,7 @@ footer li:last-child {
   grid-row: 1 / 2;
 }
 
-footer li:hover ~ li p {
+footer li:hover~li p {
   animation: wave-animation 0.3s infinite;
 }
 
@@ -813,12 +816,15 @@ footer {
   top: 15%;
   position: relative;
 }
+
 .icon-social {
   display: inline;
   padding: 0px 15px;
   cursor: pointer;
 }
+
 @keyframes wave-animation {
+
   0%,
   100% {
     transform: rotate(0deg);
@@ -1053,6 +1059,7 @@ footer {
   #design-with {
     left: 40%;
   }
+
   .menu-nav {
     padding-left: 40%;
   }
@@ -1070,6 +1077,7 @@ footer {
   .band .design {
     font-size: 100px;
   }
+
   .band .magic {
     font-size: 100px;
   }
@@ -1089,6 +1097,7 @@ footer {
   .banner-info .view-data {
     padding-left: 0px;
   }
+
   .band .banner-logo {
     width: 100%;
   }
@@ -1108,6 +1117,7 @@ footer {
   .brand .slider-show {
     width: 85%;
   }
+
   .layout-enhance-contact {
     height: 70%;
   }
@@ -1133,6 +1143,7 @@ footer {
   .band .design {
     font-size: 80px;
   }
+
   .band .magic {
     font-size: 80px;
   }
@@ -1154,6 +1165,7 @@ footer {
     grid-template-rows: 50% 50%;
     padding-top: 10%;
   }
+
   .band .banner-info {
     margin: auto;
   }
@@ -1162,6 +1174,7 @@ footer {
     width: 85%;
     background-size: contain;
   }
+
   .band-sun .sun {
     background-size: contain;
   }
@@ -1174,9 +1187,11 @@ footer {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
+
   .brand .info {
     margin: 0px;
   }
+
   .info .detail .image {
     font-size: 120px;
     padding-top: 14%;
@@ -1200,6 +1215,7 @@ footer {
     display: block;
     /* height: 100vh; */
   }
+
   #design-with {
     left: 55%;
   }
@@ -1215,6 +1231,7 @@ footer {
   .band .design {
     font-size: 50px;
   }
+
   .band .magic {
     font-size: 50px;
   }
@@ -1238,6 +1255,7 @@ footer {
     grid-template-rows: 50% 50%;
     padding-top: 10%;
   }
+
   .band .banner-info {
     margin: auto;
   }
@@ -1246,6 +1264,7 @@ footer {
     width: 85%;
     background-size: contain;
   }
+
   .band-sun .sun {
     background-size: contain;
   }
@@ -1258,9 +1277,11 @@ footer {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
+
   .brand .info {
     margin: 0px;
   }
+
   .info .detail .image {
     font-size: 75px;
     padding-top: 14%;
@@ -1309,9 +1330,11 @@ footer {
     border: 0;
     cursor: pointer;
   }
+
   .open-main-nav:focus {
     outline: none;
   }
+
   .main-nav::before {
     content: "";
     position: absolute;
@@ -1333,7 +1356,8 @@ footer {
   .main-nav ul {
     display: inline-flex;
     flex-direction: column;
-    height: 93%; /* Should be 100%, but we have a notice message :D */
+    height: 93%;
+    /* Should be 100%, but we have a notice message :D */
     align-items: flex-end;
     justify-content: center;
     transform: translateX(-65%) skew(-16deg);
@@ -1356,18 +1380,23 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+
   .main-nav li:nth-child(1) a {
     transition: all 275ms 175ms;
   }
+
   .main-nav li:nth-child(2) a {
     transition: all 275ms 225ms;
   }
+
   .main-nav li:nth-child(3) a {
     transition: all 275ms 275ms;
   }
+
   .main-nav li:nth-child(4) a {
     transition: all 275ms 325ms;
   }
+
   .main-nav li:nth-child(5) a {
     transition: all 275ms 375ms;
   }
@@ -1415,10 +1444,12 @@ footer {
     display: block;
     height: 100vh;
   }
+
   .main-nav.is-open a {
     opacity: 1;
     transform: translateY(0);
   }
+
   .is-open .burger {
     transform: skew(5deg) translateY(-8px) rotate(-45deg);
   }

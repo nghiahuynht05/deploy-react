@@ -46,6 +46,10 @@ a:-webkit-any-link {
   margin: auto;
 }
 
+.menu-nav-mobi {
+  display: none;
+}
+
 .header {
   margin: 0 auto;
 }
@@ -509,7 +513,16 @@ a:-webkit-any-link {
   padding-top: 7%;
   padding-bottom: 7%;
 }
-
+.layout-enhance-aboutus {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  margin: auto;
+  height: 80%;
+  justify-items: center;
+  position: relative;
+  top: 15%;
+}
 .contact {
   width: 100%;
   height: 55%;
@@ -621,7 +634,7 @@ input[type="submit"]:hover {
 
 @media only screen and (max-width: 600px) {
   body {
-    font-size: 32px;
+    font-size: 18px;
   }
 
   .container {
@@ -685,17 +698,6 @@ input[type="submit"]:hover {
 
   .logo .info {
     width: 100%;
-  }
-
-  .aboutus {
-    display: grid;
-    grid-template-columns: none;
-    grid-template-rows: 1fr 1fr;
-  }
-
-  .aboutus .about-image {
-    width: 100%;
-    padding-top: 2%;
   }
 
   .contact {
@@ -811,7 +813,11 @@ footer {
   top: 15%;
   position: relative;
 }
-
+.icon-social {
+  display: inline;
+  padding: 0px 15px;
+  cursor: pointer;
+}
 @keyframes wave-animation {
   0%,
   100% {
@@ -1038,7 +1044,7 @@ footer {
     height: 70%;
   }
 
-  .footer-name{
+  .footer-name {
     font-size: 28px;
   }
 }
@@ -1106,7 +1112,7 @@ footer {
     height: 70%;
   }
 
-  .footer-name{
+  .footer-name {
     font-size: 20px;
   }
 }
@@ -1114,6 +1120,14 @@ footer {
 @media only screen and (max-width: 768px) {
   #design-with {
     left: 55%;
+  }
+
+  .menu-nav {
+    padding-left: 0%;
+  }
+
+  .header .menu li {
+    padding: 8px;
   }
 
   .band .design {
@@ -1174,5 +1188,243 @@ footer {
 
   .logo .slider-logo {
     padding-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .menu-nav {
+    display: none;
+  }
+
+  .menu-nav-mobi {
+    display: block;
+    height: 100vh;
+  }
+  #design-with {
+    left: 55%;
+  }
+
+  .menu-nav {
+    padding-left: 0%;
+  }
+
+  .header .menu li {
+    padding: 8px;
+  }
+
+  .band .design {
+    font-size: 50px;
+  }
+  .band .magic {
+    font-size: 50px;
+  }
+
+  .header .menu {
+    font-size: 12px;
+  }
+
+  .band .banner-band {
+    padding-top: 25%;
+  }
+
+  .band .brand {
+    top: 17%;
+    padding-left: 50px;
+    font-size: 35px;
+  }
+
+  .band .banner {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50% 50%;
+    padding-top: 10%;
+  }
+  .band .banner-info {
+    margin: auto;
+  }
+
+  .band-sun {
+    width: 85%;
+    background-size: contain;
+  }
+  .band-sun .sun {
+    background-size: contain;
+  }
+
+  .band .banner-logo {
+    padding-top: 10%;
+  }
+
+  .layout-enhance {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .brand .info {
+    margin: 0px;
+  }
+  .info .detail .image {
+    font-size: 75px;
+    padding-top: 14%;
+  }
+
+  .brand .slider-show {
+    width: 55%;
+  }
+
+  .logo .slider-logo {
+    padding-left: 0px;
+  }
+
+  .button-text span {
+    left: 20%;
+  }
+
+  .layout-enhance-aboutus {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: auto;
+  }
+
+  .contact {
+    display: block;
+  }
+
+  .layout-enhance-contact {
+    height: auto;
+    top: 15%;
+    display: block;
+  }
+
+  .contact-image {
+    display: none;
+  }
+
+  /* Menu mobi */
+  .open-main-nav {
+    position: absolute;
+    top: 15px;
+    padding-top: 20px;
+    right: 15px;
+    z-index: 1000;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+  .open-main-nav:focus {
+    outline: none;
+  }
+  .main-nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -15px;
+    background: #fedc2a;
+    transform-origin: 0 0;
+    transform: skew(-14deg) translateX(-120%);
+    transition: all 0.275s 0.3s;
+  }
+
+  .main-nav.is-open::before {
+    transform: skew(-14deg) translateX(0);
+  }
+
+  /* Skewing effect on menu links */
+  .main-nav ul {
+    display: inline-flex;
+    flex-direction: column;
+    height: 93%; /* Should be 100%, but we have a notice message :D */
+    align-items: flex-end;
+    justify-content: center;
+    transform: translateX(-65%) skew(-16deg);
+  }
+
+  .main-nav li {
+    display: block;
+    margin: 0.5rem 0;
+    text-align: right;
+    transform: skew(16deg);
+  }
+
+  /* Apparition effect on links */
+  .main-nav a {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  .main-nav.is-open a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .main-nav li:nth-child(1) a {
+    transition: all 275ms 175ms;
+  }
+  .main-nav li:nth-child(2) a {
+    transition: all 275ms 225ms;
+  }
+  .main-nav li:nth-child(3) a {
+    transition: all 275ms 275ms;
+  }
+  .main-nav li:nth-child(4) a {
+    transition: all 275ms 325ms;
+  }
+  .main-nav li:nth-child(5) a {
+    transition: all 275ms 375ms;
+  }
+
+  /* Decoration */
+  .main-nav ul,
+  .main-nav li {
+    list-style: none;
+    padding: 0;
+  }
+
+  .burger {
+    position: relative;
+    display: block;
+    width: 28px;
+    height: 4px;
+    margin: 0 auto;
+    background: #ffc800e0;
+    transform: skew(5deg);
+    transition: all 0.275s;
+  }
+
+  .burger:after,
+  .burger:before {
+    content: "";
+    display: block;
+    height: 100%;
+    background: #ffc800e0;
+    transition: all 0.275s;
+  }
+
+  .burger:after {
+    transform: translateY(-12px) skew(0deg);
+  }
+
+  .burger:before {
+    transform: translateY(-16px) skew(-10deg);
+  }
+
+  .main-nav {
+    height: 100%;
+  }
+
+  .main-nav.is-open a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .is-open .burger {
+    transform: skew(5deg) translateY(-8px) rotate(-45deg);
+  }
+
+  .is-open .burger:before {
+    transform: translateY(0px) skew(-10deg) rotate(75deg);
+  }
+
+  .is-open .burger:after {
+    transform: translateY(-12px) translateX(10px) skew(-20deg);
+    opacity: 0;
   }
 }

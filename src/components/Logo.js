@@ -35,12 +35,12 @@ class Logo extends Component {
     render() {
         return (
             <div>
-                <div className="header" style={{ 'z-index': '99999', 'width': '100%', 'position': 'fixed', 'display': 'grid', 'grid-template-columns': '50% 50%' }}>
-                    <div style={{ 'display': 'grid', 'grid-template-columns': '20% 80%' }}>
+                <div className="header" style={{ 'zIndex': '99999', 'width': '100%', 'position': 'fixed', 'display': 'grid', 'gridTemplateColumns': '50% 50%' }}>
+                    <div style={{ 'display': 'grid', 'gridTemplateColumns': '20% 80%' }}>
                         <a href="/"><img src='./logo.png' alt="" style={{ 'height': '100%', 'width': '100%' }} /></a>
                     </div>
-                    <div style={{ 'display': 'grid', 'grid-template-columns': '80% 20%' }}>
-                        <ul className="menu" style={{ 'top': '20px', 'z-index': '70', 'padding-inline-start': '0px' }}>
+                    <div style={{ 'display': 'grid', 'gridTemplateColumns': '80% 20%' }}>
+                        <ul className="menu" style={{ 'top': '20px', 'zIndex': '70', 'paddingInlineStart': '0px' }}>
                             <li data-menuanchor="page-home" style={{ 'display': 'inline', 'padding': '8px 16px', 'cursor': 'pointer' }} >
                                 <a href="./#page-home">TEAM</a>
                             </li>

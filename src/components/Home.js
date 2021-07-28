@@ -227,7 +227,7 @@ class Home extends Component {
                                     <div className="container">
                                         <div className="content">
                                             <div className="band">
-                                                <div className="layout" style={{ display: 'block' }}>
+                                                <div className="layout" >
                                                     <div className="banner-band">
                                                         <div style={{ textAlign: 'center' }}>
                                                             <div className="magic">Magic</div>
@@ -520,11 +520,7 @@ class Home extends Component {
                                                                     <div>54 Dương Quang Ham, Danang City</div>
                                                                 </div>
                                                             </div>
-                                                            <div style={{
-                                                                'display': 'flex',
-                                                                'justifyContent': 'space-around',
-                                                                'flexWrap': 'nowrap'
-                                                            }}>
+                                                            <div className="social-list">
                                                                 <i className="fab fa-facebook-f fa-3x icon-social" onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
                                                                 <i className="fab fa-instagram fa-3x icon-social" onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
                                                                 <i className="fab fa-pinterest-p fa-3x icon-social" onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>

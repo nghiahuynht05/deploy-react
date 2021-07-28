@@ -112,7 +112,7 @@ a:-webkit-any-link {
 }
 
 .layout {
-  display: grid;
+  display: block;
   grid-template-columns: 1fr 1fr;
   margin: auto;
   height: 60%;
@@ -165,15 +165,14 @@ a:-webkit-any-link {
   /* height: 100%; */
   padding-left: 25%;
   width: max-content;
-  position: absolute;
-  top: 33%;
+  position: relative;
+  top: -30px;
 }
 
 .band .banner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100%;
-  padding-top: 05%;
 }
 
 .banner-info .char {
@@ -817,6 +816,12 @@ footer {
   position: relative;
 }
 
+.social-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap
+}
+
 .icon-social {
   display: inline;
   padding: 0px 15px;
@@ -1070,9 +1075,9 @@ footer {
     left: 50%;
   }
 
-  .band .brand {
+  /* .band .brand {
     top: 20%;
-  }
+  } */
 
   .band .design {
     font-size: 100px;
@@ -1132,6 +1137,20 @@ footer {
     left: 55%;
   }
 
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0;
+    height: 0;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .band .banner-logo {
+    position: relative;
+    bottom: 60px;
+  }
+
   .menu-nav {
     padding-left: 0%;
   }
@@ -1156,14 +1175,14 @@ footer {
     padding-top: 20%;
   }
 
-  .band .brand {
+  /* .band .brand {
     top: 23%;
-  }
+  } */
 
   .band .banner {
     grid-template-columns: 1fr;
     grid-template-rows: 50% 50%;
-    padding-top: 10%;
+    /* padding-top: 10%; */
   }
 
   .band .banner-info {
@@ -1180,7 +1199,7 @@ footer {
   }
 
   .band .banner-logo {
-    padding-top: 10%;
+    /* padding-top: 10%; */
   }
 
   .layout-enhance {
@@ -1245,7 +1264,7 @@ footer {
   }
 
   .band .brand {
-    top: 17%;
+    top: -15px;
     padding-left: 50px;
     font-size: 35px;
   }
@@ -1253,7 +1272,7 @@ footer {
   .band .banner {
     grid-template-columns: 1fr;
     grid-template-rows: 50% 50%;
-    padding-top: 10%;
+    /* padding-top: 10%; */
   }
 
   .band .banner-info {
@@ -1270,7 +1289,7 @@ footer {
   }
 
   .band .banner-logo {
-    padding-top: 10%;
+    /* padding-top: 10%; */
   }
 
   .layout-enhance {
@@ -1461,5 +1480,9 @@ footer {
   .is-open .burger:after {
     transform: translateY(-12px) translateX(10px) skew(-20deg);
     opacity: 0;
+  }
+
+  .social-list {
+    display: none;
   }
 }

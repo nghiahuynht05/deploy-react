@@ -147,7 +147,13 @@ class Home extends Component {
         nav.classList.toggle('is-open');
     };
 
-
+    itemClick() {
+        let burger = document.getElementById('burger'),
+            nav = document.getElementById('main-nav');
+        console.log("ABC")
+        burger.classList.remove('is-open');
+        nav.classList.remove('is-open');
+    }
     render() {
         return (
             <div>
@@ -184,19 +190,19 @@ class Home extends Component {
                         <nav className="main-nav" id="main-nav">
                             <ul>
                                 <li data-menuanchor="page-home" style={{ 'display': 'inline', 'cursor': 'pointer' }} >
-                                    <a href="#page-home">TEAM</a>
+                                    <a href="#page-home" onClick={() => this.itemClick()}>TEAM</a>
                                 </li>
                                 <li data-menuanchor="page-brand" style={{ 'display': 'inline', 'cursor': 'pointer' }} >
-                                    <a href="#page-brand">BRAND</a>
+                                    <a href="#page-brand" onClick={() => this.itemClick()}>BRAND</a>
                                 </li>
                                 <li data-menuanchor="page-logo" style={{ 'display': 'inline', 'cursor': 'pointer' }} >
-                                    <a href="#page-logo">LOGO</a>
+                                    <a href="#page-logo" onClick={() => this.itemClick()}>LOGO</a>
                                 </li>
                                 <li data-menuanchor="page-about" style={{ 'display': 'inline', 'cursor': 'pointer' }} >
-                                    <a href="#page-about">ABOUT US</a>
+                                    <a href="#page-about" onClick={() => this.itemClick()}>ABOUT US</a>
                                 </li>
                                 <li data-menuanchor="page-contact" style={{ 'display': 'inline', 'cursor': 'pointer' }} >
-                                    <a href="#page-contact">CONTACT</a>
+                                    <a href="#page-contact" onClick={() => this.itemClick()}>CONTACT</a>
                                 </li>
                             </ul>
                         </nav>
@@ -221,7 +227,7 @@ class Home extends Component {
                                     <div className="container">
                                         <div className="content">
                                             <div className="band">
-                                                <div className="layout" style={{ display: 'block' }}>
+                                                <div className="layout" >
                                                     <div className="banner-band">
                                                         <div style={{ textAlign: 'center' }}>
                                                             <div className="magic">Magic</div>
@@ -514,11 +520,7 @@ class Home extends Component {
                                                                     <div>54 Dương Quang Ham, Danang City</div>
                                                                 </div>
                                                             </div>
-                                                            <div style={{
-                                                                'display': 'flex',
-                                                                'justifyContent': 'space-around',
-                                                                'flexWrap': 'nowrap'
-                                                            }}>
+                                                            <div className="social-list">
                                                                 <i className="fab fa-facebook-f fa-3x icon-social" onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
                                                                 <i className="fab fa-instagram fa-3x icon-social" onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>
                                                                 <i className="fab fa-pinterest-p fa-3x icon-social" onClick={() => window.open("https://www.facebook.com/tiendat.cao.1485", "_blank")}></i>

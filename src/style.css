@@ -1264,10 +1264,12 @@ footer {
   .info .detail .image {
     font-size: 75px;
     padding-top: 14%;
+    padding-bottom: unset;
   }
 
   .brand .slider-show {
     width: 55%;
+    padding-top: 0px;
   }
 
   .logo .slider-logo {
@@ -1426,5 +1428,50 @@ footer {
   .is-open .burger:after {
     transform: translateY(-12px) translateX(10px) skew(-20deg);
     opacity: 0;
+  }
+
+  .more-button {
+    padding-top: unset;
+  }
+}
+@media only screen and (max-height: 812px) {
+  .band .banner-band {
+    top: 20%;
+  }
+
+  .band .brand {
+    top: 17%;
+  }
+
+  .band .banner {
+    padding-top: 0;
+    grid-template-rows: auto;
+  }
+
+  .band .banner-logo {
+    padding-top: 0;
+  }
+
+  .banner-info .char {
+    margin-top: 0px;
+    width: 375px;
+    background-size: cover;
+  }
+
+  .band-sun {
+    margin: unset;
+    height: 200px;
+  }
+}
+
+@media only screen and (max-height: 736px) {
+  .band .brand {
+    top: 20%;
+  }
+}
+
+@media only screen and (max-height: 667px) {
+  .band .brand {
+    top: 20%;
   }
 }
